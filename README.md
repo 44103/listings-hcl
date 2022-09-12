@@ -19,3 +19,6 @@ $\LaTeX$ listings package extension for [HCL](https://www.terraform.io/language)
 
 ## Documentation
 Currently there is only the style-file itself and the example document `example.tex` for documentation.
+
+## Visualization
+See [example.pdf](example.pdf)
