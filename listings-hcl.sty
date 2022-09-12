@@ -1,0 +1,64 @@
+\ProvidesPackage{listings-hcl}
+
+\RequirePackage{color}
+\RequirePackage{listings}
+
+\lstdefinelanguage{hcl}{
+  morekeywords=[1] { %class
+    terraform, provider, resource, module, data, variable, locals, output, var, local
+  },
+  morekeywords=[2]{ %reserved word
+    for_each, for, in, false, null, true
+  },
+  morekeywords=[3]{ %function
+    abs, ceil, floor, log, max, min, parseint, pow, signum, chomp, format, formatlist, indent, join, lower, regex, regexall, replace, split, strrev, substr, title, trim, trimprefix, trimsuffix, trimspace, upper, alltrue, anytrue, chunklist, coalesce, coalescelist, compact, concat, contains, distinct, element, flatten, index, keys, length, list, lookup, map, matchkeys, merge, one, range, reverse, setintersection, setproduct, setsubtract, setunion, slice, sort, sum, transpose, values, zipmap, base64decode, base64encode, base64gzip, csvdecode, jsondecode, jsonencode, textdecodebase64, textencodebase64, urlencode, yamldecode, yamlencode, abspath, dirname, pathexpand, basename, file, fileexists, fileset, filebase64, templatefile, formatdate, timeadd, timestamp, base64sha256, base64sha512, bcrypt, filebase64sha256, filebase64sha512, filemd5, filesha1, filesha256, filesha512, md5, rsadecrypt, sha1, sha256, sha512, uuid, uuidv5, cidrhost, cidrnetmask, cidrsubnet, cidrsubnets, can, defaults, nonsensitive, sensitive, tobool, tolist, tomap, tonumber, toset, tostring, try, type
+  },
+  morecomment=[l]{//},
+  morecomment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]{"},
+  morestring=[b]{'},
+  sensitive=true,
+  keepspaces=true,
+  showstringspaces=false
+}
+
+% Terraform Documentation like colors
+\definecolor{light-idf}{rgb}{0.322, 0.341, 0.380} % gray    (variable)
+\definecolor{light-com}{rgb}{0.435, 0.439, 0.369} % gray    (comment)
+\definecolor{light-cls}{rgb}{0.059, 0.310, 0.820} % blue    (class)
+\definecolor{light-rsv}{rgb}{0.502, 0.251, 0.788} % purple  (reserved word)
+\definecolor{light-fun}{rgb}{0.937, 0.231, 0.490} % magenta (function)
+\definecolor{light-str}{rgb}{0.455, 0.412, 0.910} % violet  (string)
+\definecolor{light-bkg}{rgb}{0.969, 0.973, 0.980} % gray    (background)
+
+\definecolor{dark-idf}{rgb}{0.937, 0.231, 0.490} % magenta (variable)
+\definecolor{dark-com}{rgb}{0.435, 0.439, 0.369} % gray    (comment)
+\definecolor{dark-cls}{rgb}{0.063, 0.376, 1.000} % blue    (class)
+\definecolor{dark-rsv}{rgb}{0.502, 0.251, 0.788} % purple  (reserved word)
+\definecolor{dark-fun}{rgb}{0.502, 0.251, 0.788} % purple  (function)
+\definecolor{dark-str}{rgb}{0.902, 0.816, 0.424} % yellow  (string)
+\definecolor{dark-bkg}{rgb}{0.141, 0.157, 0.208} % gray    (background)
+
+
+\lstdefinestyle{light}{
+  backgroundcolor={             \color{light-bkg}}, % background
+  basicstyle     ={\ttfamily    \color[gray]{0.1}}, % basic
+  identifierstyle={             \color{light-idf}}, % variable
+  commentstyle   ={             \color{light-com}}, % comment
+  keywordstyle   =[1]{\bfseries \color{light-cls}}, % class
+  keywordstyle   =[2]{\bfseries \color{light-rsv}}, % reserved word
+  keywordstyle   =[3]{\bfseries \color{light-fun}}, % function
+  stringstyle    ={\ttfamily    \color{light-str}}, % string
+}
+
+\lstdefinestyle{dark}{
+  backgroundcolor={             \color{dark-bkg}},  % background
+  basicstyle     ={\ttfamily    \color[gray]{0.9}}, % basic
+  identifierstyle={             \color{dark-idf}},  % variable
+  commentstyle   ={             \color{dark-com}},  % comment
+  keywordstyle   =[1]{\bfseries \color{dark-cls}},  % class
+  keywordstyle   =[2]{\bfseries \color{dark-rsv}},  % reserved word
+  keywordstyle   =[3]{\bfseries \color{dark-fun}},  % function
+  stringstyle    ={\ttfamily    \color{dark-str}},  % string
+}
