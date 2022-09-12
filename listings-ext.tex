@@ -14,10 +14,7 @@
   keepspaces=true
 }
 
-\title{Sample}
-
 \begin{document}
-\maketitle
 
 \section*{Light Mode}
 \begin{lstlisting}[language=HCL,style=light]
@@ -53,6 +50,8 @@ output "vpc_ids" {
   depends_on = [aws_internet_gateway.example]
 }
 \end{lstlisting}
+
+\newpage
 
 \section*{Dark Mode}
 \begin{lstlisting}[language=HCL,style=dark]
